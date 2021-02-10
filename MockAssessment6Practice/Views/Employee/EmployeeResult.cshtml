@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model EmployeeResultViewModel
+
+<h3> List of Employees</h3>
+<table class="table table-bordered">
+    <tr>
+        
+         <td>   ID  </td>
+         <td>   FirstName  </td>
+         <td>   Age </td>
+         <td>  Salary  </td>
+    </tr>
+
+@foreach (var employee in Model.Employees)
+{
+<tr>
+    <td>
+        @employee.Id
+
+    </td>
+
+    <td>
+        @employee.FirstName
+
+    </td>
+
+    <td>
+        @employee.Age
+
+    </td>
+    <td>
+        @employee.Salary
+
+    </td>
+</tr>
+}
+    </table>
+
+
+<form asp-controller ="Employee" asp-action="RetirementInfo">
+    
+    <label>Employee Id</label>
+    <input name="Id" id="ID" />
+
+    <input type ="Submit" value="Search"/>
+
+
+</form>
